@@ -1,7 +1,132 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin V3 Ultimate</title><link rel="stylesheet" href="../assets/css/v3.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet"></head><body><main class="wrap"><h1>ระบบผู้ดูแลเว็บไซต์วัด V3 Ultimate</h1><p>เพิ่ม/แก้ข้อมูลหลังอัปขึ้น GitHub Pages ได้ด้วย Firebase</p><div id="status" class="status">พร้อมใช้งาน</div><section id="loginBox" class="card"><h2>เข้าสู่ระบบ</h2><div class="row"><div><label>Email</label><input id="email"></div><div><label>Password</label><input id="password" type="password"></div></div><br><button class="btn" id="loginBtn">เข้าสู่ระบบ</button></section><section id="adminBox" style="display:none"><button class="btn" id="logoutBtn">ออกจากระบบ</button><div class="card"><h2>ตั้งค่าหน้าแรก</h2><div class="row"><div><label>ชื่อวัด</label><input id="templeName"></div><div><label>เบอร์โทร</label><input id="phone"></div><div><label>หัวข้อใหญ่</label><input id="heroTitle"></div><div><label>รูป Hero URL</label><input id="heroImage"></div></div><label>ข้อความหน้าแรก</label><textarea id="heroText"></textarea><label>ที่อยู่</label><textarea id="address"></textarea><br><button class="btn" id="saveSite">บันทึก</button></div><div class="grid"><div class="card"><h2>กิจกรรม</h2><input id="actTitle" placeholder="ชื่อกิจกรรม"><input id="actDate" placeholder="วันที่"><input id="actImage" placeholder="URL รูป"><textarea id="actDesc" placeholder="รายละเอียด"></textarea><button class="btn" onclick="addGeneric('activities','act')">เพิ่ม</button></div><div class="card"><h2>บอกบุญ</h2><input id="donTitle" placeholder="ชื่อโครงการ"><input id="donImage" placeholder="URL รูป"><input id="donTarget" type="number" placeholder="เป้าหมาย"><input id="donReceived" type="number" placeholder="ได้รับแล้ว"><textarea id="donDesc" placeholder="รายละเอียด"></textarea><button class="btn" onclick="addDonation()">เพิ่ม</button></div><div class="card"><h2>รายรับรายจ่าย</h2><input id="finDate" placeholder="วันที่"><input id="finTitle" placeholder="รายการ"><select id="finType"><option>รายรับ</option><option>รายจ่าย</option></select><input id="finAmount" type="number" placeholder="จำนวนเงิน"><button class="btn" onclick="addFinance()">เพิ่ม</button></div><div class="card"><h2>คลังธรรมะ/Live/เอกสาร/แกลเลอรี</h2><select id="genCol">
-  <option value="dhamma">คลังธรรมะ</option>
-  <option value="live">ถ่ายทอดสด</option>
-  <option value="downloads">ดาวน์โหลด</option>
-  <option value="gallery">แกลเลอรี</option>
-  <option value="contact">ติดต่อ</option>
-</select><input id="genTitle" placeholder="หัวข้อ"><input id="genUrl" placeholder="URL"><textarea id="genDesc" placeholder="รายละเอียด"></textarea><button class="btn" onclick="addOther()">เพิ่ม</button></div></div><h2>รายการล่าสุด</h2><div id="lists" class="grid"></div></section></main><script type="module" src="admin.js"></script></body></html>
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin V4 Ultimate</title>
+  <link rel="stylesheet" href="../assets/css/v3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .admin-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .muted{opacity:.75;font-size:.9rem}
+    .preview-img{width:100%;max-height:170px;object-fit:cover;border-radius:12px;border:1px solid #dfd1bd;background:#f8f1eb;margin:8px 0;display:none}
+    .mini{font-size:.9rem;padding:8px 12px}
+    .danger{background:#9b1c1c!important}
+    .secondary{background:#6b5b2b!important}
+    input[type=file]{background:#fff}
+    .status-item{border:1px solid #d9c8ad;border-radius:10px;padding:12px;margin:10px 0;background:#fff9f5}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <h1>ระบบผู้ดูแลเว็บไซต์วัด V4 Ultimate</h1>
+  <p>เพิ่ม / แก้ไข / ลบ / อัปโหลดรูปภาพเข้าระบบ Firebase Storage</p>
+  <div id="status" class="status">พร้อมใช้งาน</div>
+
+  <section id="loginBox" class="card">
+    <h2>เข้าสู่ระบบ</h2>
+    <div class="row">
+      <div><label>Email</label><input id="email"></div>
+      <div><label>Password</label><input id="password" type="password"></div>
+    </div><br>
+    <button class="btn" id="loginBtn">เข้าสู่ระบบ</button>
+  </section>
+
+  <section id="adminBox" style="display:none">
+    <button class="btn" id="logoutBtn">ออกจากระบบ</button>
+
+    <div class="card">
+      <h2>ตั้งค่าหน้าแรก / ข้อมูลวัด</h2>
+      <div class="row">
+        <div><label>ชื่อวัด</label><input id="templeName"></div>
+        <div><label>เบอร์โทร</label><input id="phone"></div>
+        <div><label>หัวข้อใหญ่</label><input id="heroTitle"></div>
+        <div><label>รูป Hero URL</label><input id="heroImage"></div>
+      </div>
+      <label>อัปโหลดรูป Hero</label>
+      <input id="heroFile" type="file" accept="image/*">
+      <img id="heroPreview" class="preview-img">
+      <label>ข้อความหน้าแรก</label><textarea id="heroText"></textarea>
+      <label>ที่อยู่</label><textarea id="address"></textarea><br>
+      <button class="btn" id="saveSite">บันทึกหน้าแรก</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>กิจกรรม</h2>
+        <input type="hidden" id="actEditId">
+        <input id="actTitle" placeholder="ชื่อกิจกรรม">
+        <input id="actDate" placeholder="วันที่">
+        <input id="actImage" placeholder="URL รูป">
+        <input id="actFile" type="file" accept="image/*">
+        <img id="actPreview" class="preview-img">
+        <textarea id="actDesc" placeholder="รายละเอียด"></textarea>
+        <div class="admin-tools">
+          <button class="btn" onclick="saveActivity()">บันทึกกิจกรรม</button>
+          <button class="btn secondary" onclick="clearActivity()">ล้างฟอร์ม</button>
+        </div>
+        <p class="muted" id="actMode">โหมด: เพิ่มใหม่</p>
+      </div>
+
+      <div class="card">
+        <h2>บอกบุญ</h2>
+        <input type="hidden" id="donEditId">
+        <input id="donTitle" placeholder="ชื่อโครงการ">
+        <input id="donImage" placeholder="URL รูป">
+        <input id="donFile" type="file" accept="image/*">
+        <img id="donPreview" class="preview-img">
+        <input id="donTarget" type="number" placeholder="เป้าหมาย">
+        <input id="donReceived" type="number" placeholder="ได้รับแล้ว">
+        <textarea id="donDesc" placeholder="รายละเอียด"></textarea>
+        <div class="admin-tools">
+          <button class="btn" onclick="saveDonation()">บันทึกบอกบุญ</button>
+          <button class="btn secondary" onclick="clearDonation()">ล้างฟอร์ม</button>
+        </div>
+        <p class="muted" id="donMode">โหมด: เพิ่มใหม่</p>
+      </div>
+
+      <div class="card">
+        <h2>รายรับรายจ่าย</h2>
+        <input type="hidden" id="finEditId">
+        <input id="finDate" placeholder="วันที่">
+        <input id="finTitle" placeholder="รายการ">
+        <select id="finType"><option>รายรับ</option><option>รายจ่าย</option></select>
+        <input id="finAmount" type="number" placeholder="จำนวนเงิน">
+        <div class="admin-tools">
+          <button class="btn" onclick="saveFinance()">บันทึกรายการ</button>
+          <button class="btn secondary" onclick="clearFinance()">ล้างฟอร์ม</button>
+        </div>
+        <p class="muted" id="finMode">โหมด: เพิ่มใหม่</p>
+      </div>
+
+      <div class="card">
+        <h2>คลังธรรมะ / Live / เอกสาร / แกลเลอรี / ติดต่อ</h2>
+        <input type="hidden" id="genEditId">
+        <select id="genCol">
+          <option value="dhamma">คลังธรรมะ</option>
+          <option value="live">ถ่ายทอดสด</option>
+          <option value="downloads">ดาวน์โหลด</option>
+          <option value="gallery">แกลเลอรี</option>
+          <option value="contact">ติดต่อ</option>
+        </select>
+        <input id="genTitle" placeholder="หัวข้อ">
+        <input id="genUrl" placeholder="URL / ลิงก์วิดีโอ / ลิงก์เอกสาร">
+        <input id="genImage" placeholder="URL รูป">
+        <input id="genFile" type="file" accept="image/*">
+        <img id="genPreview" class="preview-img">
+        <textarea id="genDesc" placeholder="รายละเอียด"></textarea>
+        <div class="admin-tools">
+          <button class="btn" onclick="saveOther()">บันทึกรายการ</button>
+          <button class="btn secondary" onclick="clearOther()">ล้างฟอร์ม</button>
+        </div>
+        <p class="muted" id="genMode">โหมด: เพิ่มใหม่</p>
+      </div>
+    </div>
+
+    <h2>รายการล่าสุด</h2>
+    <div id="lists" class="grid"></div>
+  </section>
+</main>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
