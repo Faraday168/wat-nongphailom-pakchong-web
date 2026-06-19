@@ -1,0 +1,9 @@
+{
+  "name": "วัดหนองไผ่ล้อม ปากช่อง",
+  "short_name": "วัดหนองไผ่ล้อม",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fff8f5",
+  "theme_color": "#735c00",
+  "icons": []
+}

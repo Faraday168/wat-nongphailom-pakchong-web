@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>บอกบุญ - วัดหนองไผ่ล้อม ปากช่อง</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Noto+Sans:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .lotus-bullet {
+            list-style: none;
+            position: relative;
+        }
+        .lotus-bullet::before {
+            content: "\e545"; /* Lotus-like icon */
+            font-family: 'Material Symbols Outlined';
+            color: #d4af37;
+            position: absolute;
+            left: -1.5rem;
+            font-size: 1rem;
+        }
+        .thai-pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 15 15 5-15 5-5 15-5-15-15-5 15-5z' fill='%23d4af37' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1c1c18",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#e9e1dc",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-primary": "#e9c349",
+                        "primary-fixed": "#ffe088",
+                        "surface-dim": "#e1d8d4",
+                        "outline-variant": "#d0c5af",
+                        "on-secondary-container": "#612500",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#ff7a2e",
+                        "on-secondary-fixed": "#351000",
+                        "surface-container": "#f5ece7",
+                        "primary": "#735c00",
+                        "on-surface-variant": "#4d4635",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f8efea",
+                        "on-primary-container": "#554300",
+                        "tertiary-container": "#b5b3ae",
+                        "tertiary-fixed": "#e5e2dc",
+                        "secondary": "#a04100",
+                        "outline": "#7f7663",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "surface-container-low": "#fbf2ed",
+                        "tertiary": "#5f5e5a",
+                        "secondary-fixed-dim": "#ffb693",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1e1b18",
+                        "inverse-surface": "#34302c",
+                        "surface-container-high": "#efe6e2",
+                        "on-primary-fixed": "#241a00",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-container-highest": "#e9e1dc",
+                        "on-tertiary-fixed-variant": "#474743",
+                        "surface-tint": "#735c00",
+                        "surface": "#fff8f5",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-container": "#464541",
+                        "on-surface": "#1e1b18",
+                        "background": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1120px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap": "128px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Be Vietnam Pro"],
+                        "display-lg-mobile": ["Be Vietnam Pro"],
+                        "label-sm": ["Noto Sans"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-md": ["Noto Sans"],
+                        "body-lg": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 transition-opacity duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-display-lg text-primary text-[28px] md:text-display-lg">วัดหนองไผ่ล้อม ปากช่อง</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="index.html">หน้าหลัก</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="activities.html">กิจกรรม</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="donation.html">บอกบุญ</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="dhamma.html">คลังหลักธรรม</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="finance.html">รายงานการเงิน</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="contact.html">เกี่ยวกับเรา</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="contact.html">ติดต่อเรา</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-sm text-label-sm hover:brightness-95 transition-all duration-300">ร่วมบริจาค</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="thai-pattern-overlay">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
+<img alt="บรรยากาศศาลาวัดหนองไผ่ล้อมยามเช้า" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQb9N8Wx0YBjC-VkI3a01fxButIlmclTNsd81kTgSUpMu513pAPvHce46lsy3lOh4Yb0PARHyrma04XRu-MQpLmnEVSrfOBxxl3FhIMHaaJCcQBD2zGzs5pLBKwEVPh9yzDLxq9JdrPD97UEJVajSvCjWzBNIEmithrPt_4CId60t2v9jJjNwwfq7nory9t_Sfe6YA2wNPmNb0LE5C6hcttqJupyQxPaKZ9BRc-_7qlcuNWcR2fY9p5APTAmAcrRoR2rV1GsSG1LU"/>
+</div>
+<div class="relative z-20 text-center max-w-3xl px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">บ่มเพาะความเมตตา</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">"การให้คือรูปแบบสูงสุดของการปฏิบัติธรรม ทุกการสละแบ่งปันเพียงเล็กน้อย ร่วมสร้างสันติสุขที่ยั่งยืนสืบไป"</p>
+</div>
+</section>
+<!-- Ongoing Projects -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-l-4 border-primary pl-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">ร่วมสนับสนุนวิสัยทัศน์ของเรา</span>
+<h2 class="font-display-lg text-display-lg text-on-surface mt-2">โครงการที่กำลังดำเนินอยู่</h2>
+</div>
+<p class="max-w-md text-on-surface-variant mt-4 md:mt-0 font-body-md">ศรัทธาของท่านคือแรงขับเคลื่อนในการทำนุบำรุงศาสนสถานและกิจกรรมเพื่อชุมชน</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Project Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:bg-surface-container-high">
+<div class="h-80 overflow-hidden">
+<img alt="แบบจำลองพระอุโบสถหลังใหม่ วัดหนองไผ่ล้อม" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpgYI4K7iMVF48c3md4qrnqTGchjkzz6wlX0moGG6cJVernEHPPvZa110evbZFKW-lBRwG8d_OKRV20wGoe0CziqeFtNypkVSCSfmPlUO-L0oZAA9I0ffdijbFeaVWghD9Bmh61JQxL4zrlD80kTyToJJMc4DaU8ZGr9pCOXu-OGS9FjESmHVZmUvUU29pbRSuejsCLBg9znwkm6nDNAqPtfwsumWAF3OsJYPwlkNPX_goAPfpRdqWokm42RDhcsZSM3BlDbnT2rY"/>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">โครงการสร้างพระอุโบสถหลังใหม่</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm font-label-sm">สำเร็จแล้ว 65%</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 leading-relaxed">พื้นที่ศักดิ์สิทธิ์สำหรับการปฏิบัติวิปัสสนากรรมฐานและสังฆกรรมของหมู่สงฆ์ ออกแบบด้วยสถาปัตยกรรมที่เน้นความโปร่งสบายและสงบเงียบ เพื่อประโยชน์แก่พุทธบริษัทสืบไป</p>
+</div>
+<div class="w-full bg-outline-variant/30 h-2 rounded-full mb-8">
+<div class="bg-primary-container h-full rounded-full transition-all duration-1000" style="width: 65%"></div>
+</div>
+<button class="bg-primary text-on-primary w-fit px-8 py-3 rounded-lg font-label-sm text-label-sm transition-all duration-300 hover:bg-secondary">ร่วมสั่งสมบุญ</button>
+</div>
+</div>
+<!-- Small Project 1 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:bg-surface-container-high">
+<div class="h-48">
+<img alt="บาตรพระและภัตตาหาร" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEcJrU_4-hK4_0adv8TU2ZRmD8gDtYiPqy7y0-Ud09X24E5cEZMSEpujmlXk9h_PQwd9HsdOyorCmIeG_uh5betXqea79BIAFaGwoeJl2ynozq6_NT-q83aMC6i6fEb6AqF8BUhyeV15YoA_IpSeJqdnO6zNxuG-ZvwjpTGfvIhSo4PVYbkynyezy4WxH88kHngcFNn4M1-ZueXNXdGShW1wVcWUn95UBrcXEuqUhVpDPvZogThiePJobBZ-VHgNdFZEr2cfJhdlQ"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">กองทุนภัตตาหาร</h3>
+<p class="text-on-surface-variant font-body-md mb-6">ร่วมถวายภัตตาหารแด่พระภิกษุสงฆ์และสามเณร ตลอดจนผู้มาปฏิบัติธรรม เพื่อสุขภาพที่ดีและกำลังในการศึกษาพระธรรม</p>
+<button class="text-primary font-label-sm text-label-sm border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-all">ร่วมบุญกองทุนอาหาร</button>
+</div>
+</div>
+<!-- Small Project 2 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl overflow-hidden flex flex-col group transition-all duration-500 hover:bg-surface-container-high">
+<div class="h-48">
+<img alt="คัมภีร์และหนังสือธรรมะ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7-6mhd86JyJH3fF2ZQEgXevVBid_3yFpW5KAoSwzI0Ckbc_38EJLU_B4wE5uBVO8N8d6RZQ6_kZ9y-qchf1DiXLs0hhbYzRiYhHdqyzO3qtmqVcNlfs0kTiZJAcBuEizXk7xVJ8qbh8BIzO7m4LZEx-NAFxlrCw2TsTk1Ha2gOK9WCBW8nneVJK7RT05odLq0hu7z41KZNgJepPpGkMgpcVSRzCBv139Blkj8V19FzllOJ1IbQjR3SLyxKda98ORj_4DT70_YoFk"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">กองทุนการศึกษาธรรม</h3>
+<p class="text-on-surface-variant font-body-md mb-6">มอบทุนการศึกษาสำหรับสามเณรและนักเรียนธรรม เพื่อสืบสานพระพุทธศาสนาให้คงอยู่คู่สังคมไทยสืบไป</p>
+<button class="text-primary font-label-sm text-label-sm border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-all">มอบทุนการศึกษา</button>
+</div>
+</div>
+<!-- Art Restoration -->
+<div class="md:col-span-8 bg-surface-container rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center border border-outline-variant/20">
+<div class="w-full md:w-1/3 aspect-square rounded-lg overflow-hidden">
+<img alt="ช่างกำลังลงทองจิตรกรรมฝาผนัง" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw5NgcxJclfHrUI401XKb1S9sdhckj8mXqYN-gutxjfBbH0sB7PijjRCoZSGkg8pk2GlBDFDzYaGde0KokdMoGGKsdoB9j-m8JBjCVf_avVMIKkHYVlafqY_DDBgbQZ-ginVo5ZkT8uK08clLUSHv5eMv64fEE_xfbvBJvQpfSCIHbQZpXuZwgekis_91BcKCy2f8Bqyxo-LBwvQynM9aNbAEpGBiotqLv3_fi_Uh2GEQOTmR-jfCHImkFHNt1P-z2uKJy2Hxz32U"/>
+</div>
+<div class="w-full md:w-2/3">
+<span class="font-label-sm text-label-sm text-secondary">งานอนุรักษ์เร่งด่วน</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-2 mb-4">บูรณะจิตรกรรมฝาผนัง</h3>
+<p class="text-on-surface-variant font-body-md mb-6 italic">ร่วมปกป้องมรดกทางวัฒนธรรมและภาพเขียนพุทธประวัติอายุกว่า 100 ปี ที่กำลังทรุดโทรมตามกาลเวลา</p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-sm text-label-sm">ร่วมกองทุนบูรณะศิลปกรรม</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Donation Instructions -->
+<section class="bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+<svg class="w-full h-full fill-primary" viewbox="0 0 100 100">
+<path d="M50 0 L100 50 L50 100 L0 50 Z"></path>
+</svg>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-on-surface">ช่องทางการร่วมทำบุญ</h2>
+<p class="text-on-surface-variant font-body-md max-w-2xl mx-auto mt-4">ท่านสามารถร่วมบริจาคได้หลากหลายช่องทาง ทุกปัจจัยจะได้รับการบริหารจัดการด้วยความโปร่งใสและเป็นไปตามวัตถุประสงค์</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Bank Details & Upload -->
+<div class="space-y-8">
+<div class="glass-card p-10 rounded-2xl">
+<h3 class="font-headline-md text-headline-md text-primary mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined">account_balance</span>
+                                รายละเอียดการโอนเงิน
+                            </h3>
+<div class="space-y-8">
+<div class="flex justify-between items-start border-b border-outline-variant pb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ธนาคาร</span>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">ธนาคารกรุงไทย (KTB)</span>
+</div>
+<div class="flex justify-between items-start border-b border-outline-variant pb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ชื่อบัญชี</span>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">วัดหนองไผ่ล้อม (กองทุนทั่วไป)</span>
+</div>
+<div class="flex justify-between items-start border-b border-outline-variant pb-4 group cursor-pointer" onclick="navigator.clipboard.writeText('123-4-56789-0')">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">เลขที่บัญชี</span>
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-display-lg text-secondary">123-4-56789-0</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">content_copy</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">สาขา</span>
+<span class="font-body-md text-body-md text-on-surface">สาขานครราชสีมา</span>
+</div>
+</div>
+</div>
+<!-- Upload Feature -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+                                แบ่งปันความปิติสุข
+                            </h3>
+<p class="text-on-surface-variant font-body-md mb-6">ท่านสามารถอัปโหลดรูปภาพใบเสร็จหรือภาพบรรยากาศการทำบุญเพื่อร่วมแบ่งปันบุญกุศล</p>
+<label class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-lowest transition-colors group">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary mb-2">upload_file</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant">คลิกเพื่ออัปโหลดรูปภาพ</p>
+<p class="text-[11px] text-outline mt-1">ไฟล์ JPG, PNG (สูงสุด 5MB)</p>
+</div>
+<input accept="image/*" class="hidden" type="file"/>
+</label>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-lg font-label-sm text-label-sm hover:brightness-105 transition-all">ส่งรูปภาพแจ้งความประสงค์</button>
+</div>
+</div>
+<!-- QR Code -->
+<div class="flex flex-col items-center justify-center p-10 rounded-2xl bg-white shadow-sm border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8 text-center">สแกนผ่าน PromptPay</h3>
+<div class="relative p-4 bg-white border-2 border-primary-container rounded-xl mb-8 group">
+<div class="w-64 h-64 bg-slate-100 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-6xl text-outline-variant opacity-30">qr_code_2</span>
+<div class="absolute inset-0 grid grid-cols-8 grid-rows-8 opacity-20 p-2">
+<script>
+                                        for(let i=0; i<64; i++) {
+                                            document.write(`<div class="${Math.random() > 0.5 ? 'bg-primary' : ''}"></div>`);
+                                        }
+                                    </script>
+</div>
+</div>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+<span class="bg-white px-4 py-2 rounded-full shadow-md text-label-sm font-label-sm text-primary">สแกนเพื่อร่วมบุญ</span>
+</div>
+</div>
+<ul class="space-y-4 w-full max-w-sm">
+<li class="lotus-bullet font-body-md text-on-surface-variant">เปิดแอปพลิเคชันธนาคารของท่าน</li>
+<li class="lotus-bullet font-body-md text-on-surface-variant">เลือกเมนู "สแกนเพื่อจ่าย/โอน"</li>
+<li class="lotus-bullet font-body-md text-on-surface-variant">สแกนรหัส QR ด้านบนนี้</li>
+<li class="lotus-bullet font-body-md text-on-surface-variant">ตรวจสอบชื่อบัญชี "วัดหนองไผ่ล้อม" ก่อนยืนยัน</li>
+</ul>
+<div class="mt-10 flex gap-4">
+<img alt="โลโก้ PromptPay" class="h-8 grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRvfX5j-zIEqwrzpHYBp1cqXCorfx5CczZ1rGNQcAV7JAbxZ5tWLSWx6PXEB-pnH6_zoi_uUApE0jhpF_HK9A8DbNwTYSx2f5L9mCVeZ-H0s1v9jrzwI14IDRppYcGErc7Y4CvUTqdYK6bpwxiD_E1xyqj1YWBEkcwlPJYYS5NWuKiJFtE4rdGow26uLXZATr8xkn-Kw3uB-e_iZO77JCFRscikx7_GriGMdgwWFpZM_mXqCXJi5BbCSmfqwg4LxY1ukTOTxyOdo0"/>
+<img alt="ไอคอนธนาคารทั่วไป" class="h-8 grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0QF1VE4nRh7Iqgwz9Z8JyEsqQyKaUp5SKc9SBMuvUBcTqzO1dWswKQkSOK7AQWKD8ec6tBiYnSyNll-X-MG4xYJdUrrAiMuorMl29VvHi2Pe9IR60AvbetrHnV4OBzDyPaaPK3dLxQTFO2U0Kqkj-5tenu5nXCNNsanISYKCvmHG3DhyfK8xr8F8srk9DrkeoeidQl6ZrpCAl--cJ65oxLMpB1xIKCAtVVpsuzuvz3YTsJaVf2N09roMOV35zDLenRTA3u34_5Ck"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Merit Benefits -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center">
+<div class="p-8">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">ความเจริญทางจิตวิญญาณ</h4>
+<p class="text-on-surface-variant font-body-md">การให้ช่วยขัดเกลาจิตใจให้สะอาดบริสุทธิ์และสร้างนิสัยแห่งความเมตตา</p>
+</div>
+<div class="p-8">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">บุญกุศลร่วมกัน</h4>
+<p class="text-on-surface-variant font-body-md">ทุกการสนับสนุนช่วยขับเคลื่อนสังคม สร้างแรงกระเพื่อมแห่งความดีงาม</p>
+</div>
+<div class="p-8">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">มรดกธรรมที่ยั่งยืน</h4>
+<p class="text-on-surface-variant font-body-md">ถาวรวัตถุและการศึกษาธรรมจะช่วยสืบทอดพระศาสนาให้ยั่งยืนนาน</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-xs">
+<div class="font-headline-md text-headline-md text-primary mb-2">วัดหนองไผ่ล้อม ปากช่อง</div>
+<p class="text-primary font-bold mb-4">เจ้าอาวาส: พระอธิการสมยศ สนฺตจิตโต</p>
+<p class="text-on-surface-variant font-body-md mb-6">พื้นที่แห่งความสงบและปัญญา ณ อำเภอปากช่อง มุ่งเน้นการศึกษาและปฏิบัติธรรมตามหลักคำสอนของพระพุทธเจ้า</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface uppercase mb-6">ลิงก์สำคัญ</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">นโยบายความเป็นส่วนตัว</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">ข้อกำหนดการใช้งาน</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">แผนที่วัด</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="contact.html">ติดต่อเรา</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface uppercase mb-6">ที่อยู่และการติดต่อ</h5>
+<address class="not-italic text-on-surface-variant font-body-md space-y-2">
+<p>วัดหนองไผ่ล้อม ม.14 ต.หนองสาหร่าย</p>
+<p>อ.ปากช่อง จ.นครราชสีมา 30130</p>
+<p>ประเทศไทย</p>
+<p class="mt-4 font-bold text-on-surface">โทรศัพท์: 083-386-9519</p>
+</address>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest py-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant font-label-sm text-label-sm opacity-70">© 2024 วัดหนองไผ่ล้อม ปากช่อง. สงวนลิขสิทธิ์. อนิจจัง ทุกขัง อนัตตา.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button, a, label').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Navigation transparency on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(255, 248, 245, 0.95)';
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = 'rgba(255, 248, 245, 0.9)';
+            }
+        });
+    </script>
+
+<!-- V3 Ultimate dynamic layer -->
+<a href="admin/index.html" title="Admin" style="position:fixed;right:18px;bottom:18px;z-index:9999;background:#735c00;color:white;padding:12px 14px;border-radius:999px;text-decoration:none;font-family:sans-serif;font-weight:700">ผู้ดูแล</a>
+<script type="module" src="assets/js/public-v3.js"></script>
+</body></html>
