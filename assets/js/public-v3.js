@@ -46,6 +46,7 @@ function injectSection(title, items){
   if(path.endsWith('activities.html')) injectSection('กิจกรรมจากระบบหลังบ้าน', await list('activities',50));
   if(path.endsWith('donation.html')) injectSection('โครงการบอกบุญจากระบบหลังบ้าน', await list('donations',50));
   if(path.endsWith('dhamma.html')) injectSection('คลังธรรมะจากระบบหลังบ้าน', await list('dhamma',50));
-  if(path.endsWith('contact.html')){
+    if(path.endsWith('contact.html')){
     replaceText('ยังไม่ได้ตั้งค่า Firebase', site?.address || 'ยังไม่ได้ตั้งค่าที่อยู่');
+  }
 })();
