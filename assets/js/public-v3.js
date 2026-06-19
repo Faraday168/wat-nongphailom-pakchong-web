@@ -41,6 +41,15 @@ function injectSection(title, items){
     replaceText('วัดหนองไผ่ล้อม ปากช่อง', site.templeName||'วัดหนองไผ่ล้อม ปากช่อง');
     setByContains('h1','สถานที่พักพิง', site.heroTitle);
     setByContains('p','สัมผัสภูมิปัญญา', site.heroText);
+    
+    if(site.heroImage){
+  const hero = document.querySelector('.hero');
+  if(hero){
+    hero.style.backgroundImage = `url('${site.heroImage}')`;
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundPosition = 'center';
+  }
+}
   }
   const path=location.pathname;
   if(path.endsWith('activities.html')) injectSection('กิจกรรมจากระบบหลังบ้าน', await list('activities',50));
