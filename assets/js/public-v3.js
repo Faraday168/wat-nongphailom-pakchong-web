@@ -45,10 +45,26 @@ function injectSection(title, items){
     if(site.heroImage){
   const hero = document.querySelector('.hero');
   if(hero){
-    hero.style.backgroundImage = `url('${site.heroImage}')`;
+    hero.style.backgroundImage =
+      `linear-gradient(90deg, rgba(255,248,245,.80), rgba(255,248,245,.35)), url("${site.heroImage}")`;
     hero.style.backgroundSize = 'cover';
     hero.style.backgroundPosition = 'center';
+    hero.style.backgroundRepeat = 'no-repeat';
   }
+
+  document.querySelectorAll('img').forEach(img=>{
+    const alt = (img.getAttribute('alt') || '').toLowerCase();
+    const src = img.getAttribute('src') || '';
+    if(
+      alt.includes('hero') ||
+      src.includes('temple') ||
+      src.includes('hero') ||
+      img.closest('.hero')
+    ){
+      img.src = site.heroImage;
+    }
+  });
+}
 }
   }
   const path=location.pathname;
