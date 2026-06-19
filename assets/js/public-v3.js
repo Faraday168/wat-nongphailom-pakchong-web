@@ -37,41 +37,59 @@ function injectSection(title, items){
 
 (async()=>{
   const site=await getSite();
+
   if(site){
-    replaceText('วัดหนองไผ่ล้อม ปากช่อง', site.templeName||'วัดหนองไผ่ล้อม ปากช่อง');
+    replaceText('วัดหนองไผ่ล้อม ปากช่อง',
+      site.templeName || 'วัดหนองไผ่ล้อม ปากช่อง');
+
     setByContains('h1','สถานที่พักพิง', site.heroTitle);
     setByContains('p','สัมผัสภูมิปัญญา', site.heroText);
-    
+
     if(site.heroImage){
-  const hero = document.querySelector('.hero');
-  if(hero){
-    hero.style.backgroundImage =
-      `linear-gradient(90deg, rgba(255,248,245,.80), rgba(255,248,245,.35)), url("${site.heroImage}")`;
-    hero.style.backgroundSize = 'cover';
-    hero.style.backgroundPosition = 'center';
-    hero.style.backgroundRepeat = 'no-repeat';
+      const hero=document.querySelector('.hero');
+
+      if(hero){
+        hero.style.backgroundImage =
+          `linear-gradient(90deg, rgba(255,248,245,.80), rgba(255,248,245,.35)), url("${site.heroImage}")`;
+
+        hero.style.backgroundSize='cover';
+        hero.style.backgroundPosition='center';
+        hero.style.backgroundRepeat='no-repeat';
+      }
+
+      document.querySelectorAll('img').forEach(img=>{
+        const alt=(img.getAttribute('alt')||'').toLowerCase();
+        const src=img.getAttribute('src')||'';
+
+        if(
+          alt.includes('hero') ||
+          src.includes('hero') ||
+          src.includes('temple') ||
+          img.closest('.hero')
+        ){
+          img.src=site.heroImage;
+        }
+      });
+    }
   }
 
-  document.querySelectorAll('img').forEach(img=>{
-    const alt = (img.getAttribute('alt') || '').toLowerCase();
-    const src = img.getAttribute('src') || '';
-    if(
-      alt.includes('hero') ||
-      src.includes('temple') ||
-      src.includes('hero') ||
-      img.closest('.hero')
-    ){
-      img.src = site.heroImage;
-    }
-  });
-}
-}
-  }
   const path=location.pathname;
-  if(path.endsWith('activities.html')) injectSection('กิจกรรมจากระบบหลังบ้าน', await list('activities',50));
-  if(path.endsWith('donation.html')) injectSection('โครงการบอกบุญจากระบบหลังบ้าน', await list('donations',50));
-  if(path.endsWith('dhamma.html')) injectSection('คลังธรรมะจากระบบหลังบ้าน', await list('dhamma',50));
-    if(path.endsWith('contact.html')){
-    replaceText('ยังไม่ได้ตั้งค่า Firebase', site?.address || 'ยังไม่ได้ตั้งค่าที่อยู่');
+
+  if(path.endsWith('activities.html'))
+    injectSection('กิจกรรมจากระบบหลังบ้าน', await list('activities',50));
+
+  if(path.endsWith('donation.html'))
+    injectSection('โครงการบอกบุญจากระบบหลังบ้าน', await list('donations',50));
+
+  if(path.endsWith('dhamma.html'))
+    injectSection('คลังธรรมะจากระบบหลังบ้าน', await list('dhamma',50));
+
+  if(path.endsWith('contact.html')){
+    replaceText(
+      'ยังไม่ได้ตั้งค่า Firebase',
+      site?.address || 'ยังไม่ได้ตั้งค่าที่อยู่'
+    );
+  }
+})();
   }
 })();
